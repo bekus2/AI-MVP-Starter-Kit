@@ -1,0 +1,567 @@
+/*
+Project: AI MVP Starter Kit
+File: public/assets/css/app.css
+Author: Beck Sarbassov
+Version: 0.1.0
+Date released: 2026-06-16
+Last updated: 2026-06-16
+Copyright: © Beck Sarbassov. All rights reserved.
+
+EN: Main responsive stylesheet for the static AI MVP Starter Kit app.
+RU: Основной адаптивный stylesheet для статического приложения AI MVP Starter Kit.
+*/
+
+:root {
+  --color-bg: #f6f8fa;
+  --color-surface: #ffffff;
+  --color-surface-strong: #eef6ff;
+  --color-text: #24292f;
+  --color-muted: #57606a;
+  --color-border: #d0d7de;
+  --color-primary: #0969da;
+  --color-primary-strong: #0550ae;
+  --color-success: #1a7f37;
+  --color-warning: #9a6700;
+  --color-danger: #cf222e;
+  --color-focus: #8250df;
+  --shadow-soft: 0 16px 38px rgba(31, 35, 40, 0.08);
+  --radius: 8px;
+  --max-width: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  min-width: 320px;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  background: var(--color-text);
+  color: #ffffff;
+  left: 16px;
+  padding: 10px 14px;
+  position: absolute;
+  top: -48px;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.topbar {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: 14px 20px;
+}
+
+.brand {
+  align-items: center;
+  color: var(--color-text);
+  display: inline-flex;
+  font-weight: 800;
+  gap: 10px;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.brand-mark {
+  align-items: center;
+  background: var(--color-text);
+  border-radius: 6px;
+  color: #ffffff;
+  display: inline-flex;
+  font-size: 0.85rem;
+  font-weight: 800;
+  height: 34px;
+  justify-content: center;
+  width: 34px;
+}
+
+.language-control {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.language-control label {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.select-control,
+input,
+textarea {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  min-height: 42px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+main {
+  margin: 0 auto;
+  max-width: var(--max-width);
+  padding: 28px 20px 64px;
+}
+
+.hero-section {
+  align-items: stretch;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  margin-bottom: 28px;
+}
+
+.hero-section > *,
+.tool-grid > *,
+.form-grid > *,
+.checklist-grid > * {
+  min-width: 0;
+}
+
+.hero-content,
+.hero-panel,
+.tool-panel,
+.tree-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-content {
+  padding: clamp(28px, 5vw, 56px);
+}
+
+.eyebrow {
+  color: var(--color-success);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.18;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  max-width: 760px;
+}
+
+h2 {
+  font-size: clamp(1.65rem, 3vw, 2.4rem);
+}
+
+h3 {
+  font-size: 1.12rem;
+}
+
+.hero-subtitle,
+.section-heading p:not(.eyebrow) {
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  max-width: 760px;
+}
+
+.hero-subtitle {
+  margin: 18px 0 0;
+}
+
+.hero-actions,
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.button {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  display: inline-flex;
+  font-weight: 800;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
+  text-decoration: none;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  background: var(--color-primary-strong);
+}
+
+.button-secondary {
+  background: #ffffff;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.button-secondary:hover {
+  background: var(--color-surface-strong);
+}
+
+.button-ghost {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-muted);
+}
+
+.button-ghost:hover {
+  background: #fff8c5;
+  color: var(--color-text);
+}
+
+.hero-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+}
+
+.hero-panel img {
+  aspect-ratio: 4 / 3;
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.hero-panel dl {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.hero-panel div {
+  border-top: 1px solid var(--color-border);
+  padding-top: 10px;
+}
+
+.hero-panel dt {
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero-panel dd {
+  font-weight: 800;
+  margin: 2px 0 0;
+}
+
+.tool-section {
+  margin-top: 34px;
+}
+
+.section-heading {
+  margin-bottom: 16px;
+}
+
+.tool-grid {
+  align-items: start;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+}
+
+.tool-panel {
+  padding: 22px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+.field-wide {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-weight: 800;
+}
+
+.output-panel {
+  display: grid;
+  gap: 8px;
+}
+
+.output-area {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  font-size: 0.92rem;
+  min-height: 360px;
+}
+
+.status-message {
+  color: var(--color-muted);
+  min-height: 1.4em;
+  margin: 8px 0 0;
+}
+
+.status-message.is-success {
+  color: var(--color-success);
+  font-weight: 800;
+}
+
+.status-message.is-error {
+  color: var(--color-danger);
+  font-weight: 800;
+}
+
+.checklist-summary {
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 14px;
+  grid-template-columns: auto minmax(180px, 1fr) auto;
+  margin-bottom: 16px;
+  padding: 18px;
+}
+
+progress {
+  accent-color: var(--color-success);
+  height: 18px;
+  width: 100%;
+}
+
+.checklist-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.checklist-category {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.checklist-category h3 {
+  margin-bottom: 12px;
+}
+
+.checklist-items {
+  display: grid;
+  gap: 10px;
+}
+
+.checklist-item {
+  align-items: flex-start;
+  display: flex;
+  gap: 9px;
+}
+
+.checklist-item input {
+  flex: 0 0 auto;
+  margin-top: 4px;
+  min-height: auto;
+  width: auto;
+}
+
+.tree-panel {
+  padding: 22px;
+}
+
+.tree-output {
+  background: #f6f8fa;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text);
+  font-size: 0.94rem;
+  line-height: 1.7;
+  margin: 0;
+  overflow-x: auto;
+  padding: 18px;
+  white-space: pre;
+}
+
+.table-panel h3 {
+  margin-bottom: 12px;
+}
+
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 620px;
+  width: 100%;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--color-border);
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+td {
+  word-break: break-word;
+}
+
+.empty-row {
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.site-footer {
+  background: #24292f;
+  color: #ffffff;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 6px 0;
+}
+
+@media (max-width: 960px) {
+  .hero-section,
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checklist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .language-control {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  main {
+    padding: 18px 14px 46px;
+  }
+
+  .hero-content,
+  .hero-panel,
+  .tool-panel,
+  .tree-panel {
+    padding: 18px;
+  }
+
+  .hero-actions,
+  .button-row {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .form-grid,
+  .checklist-summary,
+  .checklist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .output-area {
+    min-height: 300px;
+  }
+
+  .tree-output {
+    font-size: 0.86rem;
+  }
+}

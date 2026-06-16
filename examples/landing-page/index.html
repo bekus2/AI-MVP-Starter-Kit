@@ -1,0 +1,142 @@
+<!doctype html>
+<!--
+Project: AI MVP Starter Kit
+File: examples/landing-page/index.html
+Author: Beck Sarbassov
+Version: 0.1.0
+Date released: 2026-06-16
+Last updated: 2026-06-16
+Copyright: © Beck Sarbassov. All rights reserved.
+
+EN: Dependency-free static landing page example.
+RU: Dependency-free static landing page example.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Simple static landing page example for an MVP project.">
+  <title>MVP Landing Page Example</title>
+  <style>
+    :root {
+      --bg: #f6f8fa;
+      --surface: #ffffff;
+      --text: #24292f;
+      --muted: #57606a;
+      --border: #d0d7de;
+      --primary: #0969da;
+      --success: #1a7f37;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    main {
+      margin: 0 auto;
+      max-width: 1040px;
+      padding: 32px 18px;
+    }
+
+    .hero,
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 20px;
+      padding: clamp(24px, 5vw, 52px);
+    }
+
+    .eyebrow {
+      color: var(--success);
+      font-weight: 800;
+      margin: 0 0 8px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.15;
+      margin: 0;
+      max-width: 760px;
+    }
+
+    h2,
+    h3 {
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    p {
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .button {
+      background: var(--primary);
+      border-radius: 8px;
+      color: #ffffff;
+      display: inline-block;
+      font-weight: 800;
+      margin-top: 12px;
+      padding: 12px 16px;
+      text-decoration: none;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    article {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Landing page example</p>
+      <h1>A concise landing page for validating one MVP promise.</h1>
+      <p>Use this example to test messaging, explain value, and send users to one clear next action.</p>
+      <a class="button" href="#features">View features</a>
+    </section>
+
+    <section id="features" class="section">
+      <h2>Why this structure works</h2>
+      <div class="grid">
+        <article>
+          <h3>One promise</h3>
+          <p>The headline explains the main outcome instead of listing every possible feature.</p>
+        </article>
+        <article>
+          <h3>Short proof</h3>
+          <p>Feature cards describe practical reasons to believe the offer is useful.</p>
+        </article>
+        <article>
+          <h3>Clear action</h3>
+          <p>The call to action points visitors to the next useful step.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

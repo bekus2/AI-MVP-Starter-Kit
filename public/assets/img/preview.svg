@@ -1,0 +1,35 @@
+<!--
+Project: AI MVP Starter Kit
+File: public/assets/img/preview.svg
+Author: Beck Sarbassov
+Version: 0.1.0
+Date released: 2026-06-16
+Last updated: 2026-06-16
+Copyright: © Beck Sarbassov. All rights reserved.
+
+EN: Lightweight SVG preview asset for the static app.
+RU: Легкий SVG preview asset для статического приложения.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" role="img" aria-labelledby="title desc">
+  <title id="title">AI MVP Starter Kit preview</title>
+  <desc id="desc">A clean dashboard-style preview showing prompts, checklist progress, and project structure.</desc>
+  <rect width="960" height="720" fill="#f6f8fa"/>
+  <rect x="92" y="74" width="776" height="572" rx="18" fill="#ffffff" stroke="#d0d7de" stroke-width="4"/>
+  <rect x="132" y="126" width="242" height="52" rx="10" fill="#24292f"/>
+  <text x="160" y="160" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="700">AI MVP</text>
+  <rect x="132" y="220" width="304" height="246" rx="14" fill="#eef6ff" stroke="#0969da" stroke-width="3"/>
+  <rect x="474" y="220" width="354" height="246" rx="14" fill="#f6f8fa" stroke="#d0d7de" stroke-width="3"/>
+  <rect x="132" y="504" width="696" height="88" rx="14" fill="#f6f8fa" stroke="#d0d7de" stroke-width="3"/>
+  <text x="164" y="274" fill="#0969da" font-family="Arial, sans-serif" font-size="26" font-weight="700">Project brief</text>
+  <rect x="164" y="310" width="226" height="18" rx="9" fill="#8c959f"/>
+  <rect x="164" y="350" width="190" height="18" rx="9" fill="#8c959f"/>
+  <rect x="164" y="390" width="242" height="18" rx="9" fill="#1a7f37"/>
+  <text x="506" y="274" fill="#24292f" font-family="Arial, sans-serif" font-size="26" font-weight="700">Checklist</text>
+  <circle cx="526" cy="332" r="14" fill="#1a7f37"/>
+  <rect x="558" y="320" width="202" height="22" rx="11" fill="#8c959f"/>
+  <circle cx="526" cy="382" r="14" fill="#1a7f37"/>
+  <rect x="558" y="370" width="238" height="22" rx="11" fill="#8c959f"/>
+  <circle cx="526" cy="432" r="14" fill="#d0d7de"/>
+  <rect x="558" y="420" width="176" height="22" rx="11" fill="#8c959f"/>
+  <text x="164" y="558" fill="#24292f" font-family="Arial, sans-serif" font-size="24" font-weight="700">English · Русский · Қазақша</text>
+</svg>

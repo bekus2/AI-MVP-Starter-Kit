@@ -1,0 +1,86 @@
+<!doctype html>
+<!--
+Project: AI MVP Starter Kit
+File: starter/public/index.html
+Author: Beck Sarbassov
+Version: 0.1.0
+Date released: 2026-06-16
+Last updated: 2026-06-16
+Copyright: © Beck Sarbassov. All rights reserved.
+
+EN: Simple static MVP starter page with feature cards and a demo lead form.
+RU: Простая static MVP starter page с feature cards и demo lead form.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dependency-free starter MVP template with responsive layout and a demo lead form.">
+  <title>Starter MVP</title>
+  <link rel="stylesheet" href="./assets/css/starter.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home">Starter MVP</a>
+    <nav aria-label="Primary navigation">
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero-section">
+      <div>
+        <p class="eyebrow">Clean MVP foundation</p>
+        <h1>Launch a focused MVP with a clear first workflow.</h1>
+        <p>This starter is intentionally small: semantic HTML, responsive CSS, and vanilla JavaScript validation.</p>
+        <a class="button" href="#contact">Request access</a>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <h2>Core Features</h2>
+      <div class="feature-grid">
+        <article>
+          <h3>Fast local start</h3>
+          <p>Open the HTML file directly or serve it with any static server.</p>
+        </article>
+        <article>
+          <h3>Simple structure</h3>
+          <p>Public assets, source notes, and database planning files are separated.</p>
+        </article>
+        <article>
+          <h3>Ready to extend</h3>
+          <p>Use the schema and architecture notes when adding a backend later.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div>
+        <h2>Lead Form Demo</h2>
+        <p>Use this form pattern as a starting point, then connect it to a secure backend when the MVP needs real submissions.</p>
+      </div>
+      <form id="starterLeadForm" novalidate>
+        <label for="starterName">Name</label>
+        <input id="starterName" name="name" type="text" autocomplete="name" required>
+
+        <label for="starterEmail">Email</label>
+        <input id="starterEmail" name="email" type="email" autocomplete="email" required>
+
+        <label for="starterMessage">Message</label>
+        <textarea id="starterMessage" name="message" rows="4" required></textarea>
+
+        <button class="button" type="submit">Validate form</button>
+        <p id="starterStatus" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Starter MVP · Static, dependency-free, ready for extension.</p>
+  </footer>
+
+  <script src="./assets/js/starter.js"></script>
+</body>
+</html>

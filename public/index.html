@@ -1,0 +1,303 @@
+<!doctype html>
+<!--
+Project: AI MVP Starter Kit
+File: public/index.html
+Author: Beck Sarbassov
+Version: 0.1.0
+Date released: 2026-06-16
+Last updated: 2026-06-16
+Copyright: © Beck Sarbassov. All rights reserved.
+
+EN: Main multilingual static web app for AI-ready MVP planning.
+RU: Основное multilingual static web-приложение для планирования MVP с AI-агентами.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dependency-free MVP starter kit for Codex, Claude Code, Cursor and AI-assisted web development.">
+  <meta name="keywords" content="ai coding, codex, claude code, cursor, vibe coding, mvp, starter kit, html, css, javascript">
+  <meta name="author" content="Beck Sarbassov">
+  <meta property="og:title" content="AI MVP Starter Kit">
+  <meta property="og:description" content="Plan clean MVP projects with AI coding agents using a static multilingual toolkit.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/img/preview.svg">
+  <meta name="theme-color" content="#0969da">
+  <title>AI MVP Starter Kit</title>
+  <link rel="icon" href="./assets/img/preview.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./assets/css/app.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="accessibility.skip">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="topbar" aria-label="Primary">
+      <a class="brand" href="#hero" aria-label="AI MVP Starter Kit">
+        <span class="brand-mark" aria-hidden="true">AI</span>
+        <span>AI MVP Starter Kit</span>
+      </a>
+      <div class="language-control">
+        <label for="languageSelect" data-i18n="language.label">Language</label>
+        <select id="languageSelect" class="select-control">
+          <option value="en" data-i18n="language.english">English</option>
+          <option value="ru" data-i18n="language.russian">Русский</option>
+          <option value="kk" data-i18n="language.kazakh">Қазақша</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Open-source AI project kickoff toolkit</p>
+        <h1 data-i18n="hero.title">AI MVP Starter Kit</h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">Generate practical MVP briefs, AI coding tasks, and readiness checklists before you ask an agent to build.</p>
+        <div class="hero-actions" aria-label="Primary actions">
+          <a class="button button-primary" href="#brief-generator" data-i18n="hero.quickStart">Quick Start</a>
+          <a class="button button-secondary" href="#agent-generator" data-i18n="hero.generateTask">Generate AI Task</a>
+          <a class="button button-secondary" href="#checklist" data-i18n="hero.viewChecklist">View Checklist</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="Project summary">
+        <img src="./assets/img/preview.svg" alt="" role="presentation">
+        <dl>
+          <div>
+            <dt data-i18n="hero.statStack">Stack</dt>
+            <dd>HTML · CSS · JS</dd>
+          </div>
+          <div>
+            <dt data-i18n="hero.statStorage">Storage</dt>
+            <dd>LocalStorage</dd>
+          </div>
+          <div>
+            <dt data-i18n="hero.statLanguages">Languages</dt>
+            <dd>English · Русский · Қазақша</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="brief-generator" class="tool-section" aria-labelledby="brief-title">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="brief.eyebrow">MVP planning</p>
+        <h2 id="brief-title" data-i18n="brief.title">MVP Project Brief Generator</h2>
+        <p data-i18n="brief.subtitle">Turn rough project notes into a clean brief you can paste into an AI coding agent.</p>
+      </div>
+
+      <div class="tool-grid">
+        <form id="briefForm" class="tool-panel">
+          <div class="form-grid">
+            <div class="field">
+              <label for="briefProjectName" data-i18n="brief.projectNameLabel">Project name</label>
+              <input id="briefProjectName" name="projectName" type="text" data-i18n-placeholder="brief.projectNamePlaceholder" placeholder="Client Portal MVP">
+            </div>
+            <div class="field">
+              <label for="briefProjectType" data-i18n="brief.projectTypeLabel">Project type</label>
+              <input id="briefProjectType" name="projectType" type="text" data-i18n-placeholder="brief.projectTypePlaceholder" placeholder="SaaS dashboard, landing page, CRM module">
+            </div>
+            <div class="field">
+              <label for="briefAudience" data-i18n="brief.audienceLabel">Target audience</label>
+              <input id="briefAudience" name="targetAudience" type="text" data-i18n-placeholder="brief.audiencePlaceholder" placeholder="Small business owners">
+            </div>
+            <div class="field">
+              <label for="briefStack" data-i18n="brief.stackLabel">Preferred stack</label>
+              <input id="briefStack" name="preferredStack" type="text" data-i18n-placeholder="brief.stackPlaceholder" placeholder="HTML, CSS, JavaScript">
+            </div>
+            <div class="field field-wide">
+              <label for="briefProblem" data-i18n="brief.problemLabel">Main problem</label>
+              <textarea id="briefProblem" name="mainProblem" rows="3" data-i18n-placeholder="brief.problemPlaceholder" placeholder="Describe the user problem this MVP should solve."></textarea>
+            </div>
+            <div class="field field-wide">
+              <label for="briefFeatures" data-i18n="brief.featuresLabel">Core features</label>
+              <textarea id="briefFeatures" name="coreFeatures" rows="3" data-i18n-placeholder="brief.featuresPlaceholder" placeholder="List core features separated by commas or new lines."></textarea>
+            </div>
+            <div class="field">
+              <label for="briefDeployment" data-i18n="brief.deploymentLabel">Deployment target</label>
+              <input id="briefDeployment" name="deploymentTarget" type="text" data-i18n-placeholder="brief.deploymentPlaceholder" placeholder="GitHub Pages, shared hosting, VPS">
+            </div>
+            <div class="field">
+              <label for="briefLanguage" data-i18n="brief.outputLanguageLabel">Generated task language</label>
+              <select id="briefLanguage" name="language" class="select-control">
+                <option value="en" data-i18n="language.english">English</option>
+                <option value="ru" data-i18n="language.russian">Русский</option>
+                <option value="kk" data-i18n="language.kazakh">Қазақша</option>
+              </select>
+            </div>
+          </div>
+          <div class="button-row">
+            <button class="button button-primary" type="submit" data-i18n="brief.generateButton">Generate brief</button>
+            <button class="button button-secondary" type="button" id="copyBriefButton" data-i18n="common.copy">Copy to clipboard</button>
+            <button class="button button-secondary" type="button" id="saveBriefButton" data-i18n="common.save">Save to LocalStorage</button>
+            <button class="button button-ghost" type="button" id="clearBriefButton" data-i18n="common.clear">Clear</button>
+          </div>
+        </form>
+
+        <div class="tool-panel output-panel">
+          <label for="briefOutput" data-i18n="brief.outputLabel">Generated brief</label>
+          <textarea id="briefOutput" class="output-area" rows="18" readonly></textarea>
+          <p class="status-message" id="briefStatus" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="agent-generator" class="tool-section" aria-labelledby="agent-title">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="agent.eyebrow">AI task builder</p>
+        <h2 id="agent-title" data-i18n="agent.title">AI Agent Task Generator</h2>
+        <p data-i18n="agent.subtitle">Create a structured prompt with architecture, quality, security, documentation, and validation requirements.</p>
+      </div>
+
+      <div class="tool-grid">
+        <form id="agentForm" class="tool-panel">
+          <div class="form-grid">
+            <div class="field">
+              <label for="agentName" data-i18n="agent.agentLabel">AI agent</label>
+              <select id="agentName" name="agentName" class="select-control">
+                <option value="Codex">Codex</option>
+                <option value="Claude Code">Claude Code</option>
+                <option value="Cursor">Cursor</option>
+                <option value="Windsurf">Windsurf</option>
+                <option value="Cline">Cline</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="agentProjectType" data-i18n="agent.projectTypeLabel">Project type</label>
+              <select id="agentProjectType" name="projectType" class="select-control">
+                <option value="Landing Page" data-i18n="agent.types.landing">Landing Page</option>
+                <option value="SaaS MVP" data-i18n="agent.types.saas">SaaS MVP</option>
+                <option value="CRM Module" data-i18n="agent.types.crm">CRM Module</option>
+                <option value="Admin Panel" data-i18n="agent.types.admin">Admin Panel</option>
+                <option value="Telegram Bot" data-i18n="agent.types.bot">Telegram Bot</option>
+                <option value="API Integration" data-i18n="agent.types.api">API Integration</option>
+                <option value="Custom" data-i18n="agent.types.custom">Custom</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="qualityLevel" data-i18n="agent.qualityLabel">Quality level</label>
+              <select id="qualityLevel" name="qualityLevel" class="select-control">
+                <option value="Prototype" data-i18n="agent.quality.prototype">Prototype</option>
+                <option value="MVP" data-i18n="agent.quality.mvp">MVP</option>
+                <option value="Production-ready" data-i18n="agent.quality.production">Production-ready</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="documentationLevel" data-i18n="agent.documentationLabel">Documentation level</label>
+              <select id="documentationLevel" name="documentationLevel" class="select-control">
+                <option value="Minimal" data-i18n="agent.docs.minimal">Minimal</option>
+                <option value="Standard" data-i18n="agent.docs.standard">Standard</option>
+                <option value="Full" data-i18n="agent.docs.full">Full</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="agentLanguage" data-i18n="agent.outputLanguageLabel">Output language</label>
+              <select id="agentLanguage" name="language" class="select-control">
+                <option value="en" data-i18n="language.english">English</option>
+                <option value="ru" data-i18n="language.russian">Русский</option>
+                <option value="kk" data-i18n="language.kazakh">Қазақша</option>
+              </select>
+            </div>
+          </div>
+          <div class="button-row">
+            <button class="button button-primary" type="submit" data-i18n="agent.generateButton">Generate AI task</button>
+            <button class="button button-secondary" type="button" id="copyTaskButton" data-i18n="common.copy">Copy to clipboard</button>
+            <button class="button button-ghost" type="button" id="clearTaskButton" data-i18n="common.clear">Clear</button>
+          </div>
+        </form>
+
+        <div class="tool-panel output-panel">
+          <label for="taskOutput" data-i18n="agent.outputLabel">Generated AI task</label>
+          <textarea id="taskOutput" class="output-area" rows="18" readonly></textarea>
+          <p class="status-message" id="taskStatus" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="checklist" class="tool-section" aria-labelledby="checklist-title">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="checklist.eyebrow">Launch readiness</p>
+        <h2 id="checklist-title" data-i18n="checklist.title">MVP Readiness Checklist</h2>
+        <p data-i18n="checklist.subtitle">Track whether the project is clear enough for AI-assisted development and a responsible launch.</p>
+      </div>
+      <div class="checklist-summary">
+        <strong><span data-i18n="checklist.progressLabel">MVP readiness</span>: <span id="checklistProgress">0%</span></strong>
+        <progress id="checklistProgressBar" max="100" value="0">0%</progress>
+        <button class="button button-ghost" id="resetChecklistButton" type="button" data-i18n="checklist.reset">Reset checklist</button>
+      </div>
+      <div id="checklistGrid" class="checklist-grid"></div>
+    </section>
+
+    <section id="structure-viewer" class="tool-section" aria-labelledby="structure-title">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="structure.eyebrow">AI-ready foundation</p>
+        <h2 id="structure-title" data-i18n="structure.title">Starter Project Structure Viewer</h2>
+        <p data-i18n="structure.subtitle">A clean structure helps AI agents keep project context, documentation, code, and deployment notes separated.</p>
+      </div>
+      <div class="tree-panel">
+        <pre id="structureTree" class="tree-output" aria-label="Starter project tree"></pre>
+      </div>
+    </section>
+
+    <section id="lead-demo" class="tool-section" aria-labelledby="lead-title">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="leads.eyebrow">Local form pattern</p>
+        <h2 id="lead-title" data-i18n="leads.title">Local Demo Lead Form</h2>
+        <p data-i18n="leads.subtitle">Submissions stay in this browser only. This pattern demonstrates validation, LocalStorage, and safe rendering.</p>
+      </div>
+
+      <div class="tool-grid">
+        <form id="leadForm" class="tool-panel">
+          <div class="field">
+            <label for="leadName" data-i18n="leads.nameLabel">Name</label>
+            <input id="leadName" name="name" type="text" autocomplete="name" required data-i18n-placeholder="leads.namePlaceholder" placeholder="Alex Developer">
+          </div>
+          <div class="field">
+            <label for="leadEmail" data-i18n="leads.emailLabel">Email</label>
+            <input id="leadEmail" name="email" type="email" autocomplete="email" required data-i18n-placeholder="leads.emailPlaceholder" placeholder="alex@example.test">
+          </div>
+          <div class="field">
+            <label for="leadMessage" data-i18n="leads.messageLabel">Message</label>
+            <textarea id="leadMessage" name="message" rows="4" required data-i18n-placeholder="leads.messagePlaceholder" placeholder="I want to plan a small CRM MVP."></textarea>
+          </div>
+          <div class="button-row">
+            <button class="button button-primary" type="submit" data-i18n="leads.saveLead">Save demo lead</button>
+            <button class="button button-ghost" type="button" id="clearLeadsButton" data-i18n="leads.clearLeads">Clear demo leads</button>
+          </div>
+          <p class="status-message" id="leadStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="tool-panel table-panel">
+          <h3 data-i18n="leads.tableTitle">Saved demo leads</h3>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col" data-i18n="leads.tableName">Name</th>
+                  <th scope="col" data-i18n="leads.tableEmail">Email</th>
+                  <th scope="col" data-i18n="leads.tableMessage">Message</th>
+                  <th scope="col" data-i18n="leads.tableDate">Saved</th>
+                </tr>
+              </thead>
+              <tbody id="leadsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>AI MVP Starter Kit</strong> · <span data-i18n="footer.opensource">Open-source starter for AI-assisted development.</span></p>
+    <p data-i18n="footer.githubReady">GitHub-ready static project for clean MVP kickoff workflows.</p>
+    <p>2026 · <span data-i18n="footer.languages">UI languages: English, Русский, Қазақша.</span></p>
+  </footer>
+
+  <script src="./assets/js/translations.js" defer></script>
+  <script src="./assets/js/storage.js" defer></script>
+  <script src="./assets/js/security.js" defer></script>
+  <script src="./assets/js/i18n.js" defer></script>
+  <script src="./assets/js/app.js" defer></script>
+</body>
+</html>

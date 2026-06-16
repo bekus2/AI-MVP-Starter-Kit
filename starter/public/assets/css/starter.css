@@ -1,0 +1,199 @@
+/*
+Project: AI MVP Starter Kit
+File: starter/public/assets/css/starter.css
+Author: Beck Sarbassov
+Version: 0.1.0
+Date released: 2026-06-16
+Last updated: 2026-06-16
+Copyright: © Beck Sarbassov. All rights reserved.
+
+EN: Responsive CSS for the reusable starter MVP template.
+RU: Адаптивный CSS для reusable starter MVP template.
+*/
+
+:root {
+  --bg: #f6f8fa;
+  --surface: #ffffff;
+  --text: #24292f;
+  --muted: #57606a;
+  --border: #d0d7de;
+  --primary: #0969da;
+  --primary-dark: #0550ae;
+  --success: #1a7f37;
+  --danger: #cf222e;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+a {
+  color: var(--primary);
+}
+
+:focus-visible {
+  outline: 3px solid #8250df;
+  outline-offset: 3px;
+}
+
+.site-header {
+  align-items: center;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  padding: 16px clamp(16px, 4vw, 48px);
+}
+
+.brand {
+  color: var(--text);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 28px 16px 56px;
+}
+
+.hero-section,
+.section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 22px;
+  padding: clamp(24px, 5vw, 52px);
+}
+
+.eyebrow {
+  color: var(--success);
+  font-weight: 800;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  max-width: 780px;
+}
+
+p {
+  color: var(--muted);
+}
+
+.button {
+  background: var(--primary);
+  border: 0;
+  border-radius: var(--radius);
+  color: #ffffff;
+  display: inline-flex;
+  font-weight: 800;
+  justify-content: center;
+  margin-top: 12px;
+  min-height: 42px;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--primary-dark);
+}
+
+.feature-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.feature-grid article {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.contact-section {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1fr);
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+input,
+textarea {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font: inherit;
+  min-height: 42px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+label {
+  font-weight: 800;
+}
+
+.status {
+  min-height: 1.4em;
+}
+
+.status.success {
+  color: var(--success);
+  font-weight: 800;
+}
+
+.status.error {
+  color: var(--danger);
+  font-weight: 800;
+}
+
+footer {
+  background: var(--text);
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  color: #ffffff;
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .site-header,
+  nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .feature-grid,
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,212 @@
+<!doctype html>
+<!--
+Project: AI MVP Starter Kit
+File: examples/lead-form/index.html
+Author: Beck Sarbassov
+Version: 0.1.0
+Date released: 2026-06-16
+Last updated: 2026-06-16
+Copyright: © Beck Sarbassov. All rights reserved.
+
+EN: Static lead form example with LocalStorage and safe rendering.
+RU: Static lead form example with LocalStorage and safe rendering.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lead Form Example</title>
+  <style>
+    :root {
+      --bg: #f6f8fa;
+      --surface: #ffffff;
+      --text: #24292f;
+      --muted: #57606a;
+      --border: #d0d7de;
+      --primary: #0969da;
+      --success: #1a7f37;
+      --danger: #cf222e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 24px;
+    }
+
+    main {
+      margin: 0 auto;
+      max-width: 920px;
+    }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 18px;
+      padding: 24px;
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+    }
+
+    label {
+      font-weight: 800;
+    }
+
+    input,
+    textarea,
+    button {
+      border-radius: 8px;
+      font: inherit;
+      min-height: 42px;
+      padding: 10px 12px;
+    }
+
+    input,
+    textarea {
+      border: 1px solid var(--border);
+      width: 100%;
+    }
+
+    button {
+      background: var(--primary);
+      border: 0;
+      color: #ffffff;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .status {
+      color: var(--muted);
+      min-height: 1.4em;
+    }
+
+    .status.success {
+      color: var(--success);
+      font-weight: 800;
+    }
+
+    .status.error {
+      color: var(--danger);
+      font-weight: 800;
+    }
+
+    ul {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <h1>Lead Form Example</h1>
+      <p>This demo saves non-sensitive sample leads in LocalStorage and safely renders user text.</p>
+      <form id="leadExampleForm" novalidate>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Save lead locally</button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section>
+      <h2>Saved Leads</h2>
+      <button id="clearButton" type="button">Clear local leads</button>
+      <ul id="leadList"></ul>
+    </section>
+  </main>
+
+  <script>
+    /**
+     * EN: Escapes text before rendering saved lead data.
+     * RU: Экранирует текст перед выводом сохраненных lead data.
+     */
+    function escapeHTML(value) {
+      return String(value || "").replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      }[char]));
+    }
+
+    const key = "leadFormExample:leads";
+    const form = document.getElementById("leadExampleForm");
+    const status = document.getElementById("status");
+    const list = document.getElementById("leadList");
+
+    function getLeads() {
+      return JSON.parse(localStorage.getItem(key) || "[]");
+    }
+
+    function setLeads(leads) {
+      localStorage.setItem(key, JSON.stringify(leads));
+    }
+
+    function render() {
+      const leads = getLeads();
+      list.innerHTML = leads.length
+        ? leads.map((lead) => `<li><strong>${escapeHTML(lead.name)}</strong><br>${escapeHTML(lead.email)}<br>${escapeHTML(lead.message)}</li>`).join("")
+        : "<li>No local leads saved yet.</li>";
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const name = String(data.get("name") || "").trim();
+      const email = String(data.get("email") || "").trim();
+      const message = String(data.get("message") || "").trim();
+
+      if (name.length < 2 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || message.length < 3) {
+        status.textContent = "Please enter a valid name, email, and message.";
+        status.className = "status error";
+        return;
+      }
+
+      const leads = getLeads();
+      leads.unshift({ name, email, message });
+      setLeads(leads);
+      form.reset();
+      status.textContent = "Lead saved locally.";
+      status.className = "status success";
+      render();
+    });
+
+    document.getElementById("clearButton").addEventListener("click", () => {
+      localStorage.removeItem(key);
+      status.textContent = "Local leads cleared.";
+      status.className = "status success";
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>

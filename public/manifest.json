@@ -1,0 +1,17 @@
+{
+  "name": "AI MVP Starter Kit",
+  "short_name": "AI MVP Kit",
+  "description": "Dependency-free MVP starter kit for AI-assisted web development.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f8fa",
+  "theme_color": "#0969da",
+  "icons": [
+    {
+      "src": "./assets/img/preview.svg",
+      "sizes": "960x720",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
