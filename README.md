@@ -68,7 +68,7 @@ For GitHub Pages, enable Pages for the repository and open the published reposit
 ## Project Structure
 
 ```text
-Experimental-Project-003/
+AI-MVP-Starter-Kit/
 ├── README.md
 ├── LICENSE
 ├── CHANGELOG.md
@@ -199,7 +199,7 @@ project-template
 
 Author: Beck Sarbassov  
 Date created: 2026-06-16  
-Last updated: 2026-06-16  
+Last updated: 2026-06-23  
 Copyright: © Beck Sarbassov. All rights reserved.
 
 ---
@@ -263,7 +263,7 @@ http://localhost:8000
 ## Структура Проекта
 
 ```text
-Experimental-Project-003/
+AI-MVP-Starter-Kit/
 ├── README.md
 ├── LICENSE
 ├── CHANGELOG.md
@@ -359,5 +359,5 @@ Experimental-Project-003/
 
 Автор: Beck Sarbassov  
 Дата создания: 2026-06-16  
-Последнее обновление: 2026-06-16  
+Последнее обновление: 2026-06-23  
 Авторские права: © Beck Sarbassov. Все права защищены.

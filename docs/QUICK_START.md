@@ -5,8 +5,8 @@ AI MVP Starter Kit runs without installation, build tools, external services, or
 ## 1. Clone The Repository
 
 ```bash
-git clone https://github.com/bekus2/Experimental-Project-003.git
-cd Experimental-Project-003
+git clone https://github.com/bekus2/AI-MVP-Starter-Kit.git
+cd AI-MVP-Starter-Kit
 ```
 
 ## 2. Open The App
@@ -71,5 +71,5 @@ The script checks required files, documentation, translations, and empty placeho
 
 Author: Beck Sarbassov  
 Date created: 2026-06-16  
-Last updated: 2026-06-16  
+Last updated: 2026-06-23  
 Copyright: © Beck Sarbassov. All rights reserved.

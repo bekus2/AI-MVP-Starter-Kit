@@ -45,7 +45,35 @@
 
 - Следующие улучшения: Markdown export, GitHub issue templates, optional backend starter, browser tests.
 
+## 2026-06-23 - v0.1.1
+
+### Summary
+
+Updated public repository naming references from `Experimental-Project-003` to `AI-MVP-Starter-Kit` in README and Quick Start documentation.
+
+### Changed Files
+
+- `README.md`
+- `docs/QUICK_START.md`
+- `Codex_History.md`
+
+### Added
+
+- Documentation history entry for repository-name synchronization.
+
+### Fixed
+
+- Stale clone command and folder-name examples.
+
+### Security
+
+- No security-sensitive code or configuration was changed.
+
+### Notes
+
+- Project source code was not modified in this update.
+
 Author: Beck Sarbassov  
 Date created: 2026-06-16  
-Last updated: 2026-06-16  
+Last updated: 2026-06-23  
 Copyright: © Beck Sarbassov. All rights reserved.
